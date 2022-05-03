@@ -20,7 +20,7 @@ else{
         
     }
 }
-if(shooter.style.left===0+"%"){
+if(shooter.style.left===86+"%"){
     console.log("limite");
 }
 else{
