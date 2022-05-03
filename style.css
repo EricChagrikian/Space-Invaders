@@ -1,3 +1,13 @@
+
+
+
+.shooter{
+ width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-top: 0;
+  border-bottom: 80px solid greenyellow;
+}
 .grid{
     width: 800px;
     height: 800px;
@@ -16,4 +26,5 @@
 .invader{
     background-color: red;
     border-radius: 50%;
+
 }
