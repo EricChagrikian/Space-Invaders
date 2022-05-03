@@ -7,7 +7,7 @@ let goinRight = true
 let shooter = document.querySelector('.shooter')
 const resultsDisplay = document.querySelector('.results')
 let results = 0
-let currentShooterIndex = 202
+let currentShooterIndex = 400
 
 
 for (let i = 0; i < 800; i++) {
