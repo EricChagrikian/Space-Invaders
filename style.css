@@ -1,0 +1,20 @@
+
+.grid{
+    background-color: black;
+    width: 50%;
+    height: 700px;
+    position: relative;
+    left: 25%;
+}
+.shooter{
+ 
+ 
+ 
+ 
+ 
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-top: 0;
+  border-bottom: 80px solid greenyellow;
+}
