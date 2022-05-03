@@ -1,24 +1,40 @@
-*{
-  margin: 0;
-  padding: 0;
+
+.laser {
+    background: url(./images/Lazer.png)
 }
-.grid{
-    background-color: black;
-    width: 800px;
-    height: 700px;
-    position: relative;
-    left: 25%;
-    overflow: hidden;
+
+.boom {
+    background: url(./images/boom.png)
 }
-.shooter{
- 
- 
- transform: translateX(-50%);
- 
- 
+
+.shooter {
+  position: absolute;
   width: 0;
   height: 0;
   border: 50px solid transparent;
   border-top: 0;
   border-bottom: 80px solid greenyellow;
+  transform: translate(-50%);
+}
+  
+.grid{
+    position: relative;
+    width: 800px;
+    height: 800px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    overflow: hidden;
+}
+
+.grid div{
+    width: 40px;
+    height: 40px;
+}
+
+.invader{
+    background-color: red;
+    border-radius: 50%;
+
 }
