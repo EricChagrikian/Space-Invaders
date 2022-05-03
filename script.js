@@ -92,7 +92,7 @@ shooter.style.bottom = 15+"px";
 });
 
 document.addEventListener('keydown', (e)=>{
-if(shooter.style.left===0+"%"){
+if(shooter.style.left===-8+"%"){
     console.log("limite");
 }
 else{
@@ -101,7 +101,7 @@ else{
         
     }
 }
-if(shooter.style.left===0+"%"){
+if(shooter.style.left===90+"%"){
     console.log("limite");
 }
 else{
