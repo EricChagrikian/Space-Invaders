@@ -1,20 +1,30 @@
 
-.grid{
-    background-color: black;
-    width: 50%;
-    height: 700px;
-    position: relative;
-    left: 25%;
-}
+
+
 .shooter{
- 
- 
- 
- 
- 
-  width: 0;
+ width: 0;
   height: 0;
   border: 50px solid transparent;
   border-top: 0;
   border-bottom: 80px solid greenyellow;
+}
+.grid{
+    width: 800px;
+    height: 800px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+
+}
+
+.grid div{
+    width: 40px;
+    height: 40px;
+}
+
+.invader{
+    background-color: red;
+    border-radius: 50%;
+
 }
