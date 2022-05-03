@@ -1,5 +1,9 @@
+.laser {
+    background: url(./images/Lazer.png)
+}
 
-
+.boom {
+    background: url(./images/boom.png)
 
 .shooter{
  width: 0;
@@ -8,6 +12,7 @@
   border-top: 0;
   border-bottom: 80px solid greenyellow;
 }
+  
 .grid{
     width: 800px;
     height: 800px;
@@ -26,5 +31,4 @@
 .invader{
     background-color: red;
     border-radius: 50%;
-
 }
