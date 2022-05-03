@@ -8,11 +8,12 @@
     height: 700px;
     position: relative;
     left: 25%;
+    overflow: hidden;
 }
 .shooter{
  
  
- 
+ transform: translateX(-50%);
  
  
   width: 0;

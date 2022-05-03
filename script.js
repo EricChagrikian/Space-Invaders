@@ -16,16 +16,16 @@ if(shooter.style.left===0+"%"){
 }
 else{
     if(e.key === "ArrowLeft"){
-        shooter.style.left=parseInt(shooter.style.left) -2 +"%"
+        shooter.style.left=parseInt(shooter.style.left) -10 +"%"
         
     }
 }
-if(shooter.style.left===86+"%"){
+if(shooter.style.left===100+"%"){
     console.log("limite");
 }
 else{
     if(e.key==='ArrowRight'){
-        shooter.style.left=parseInt(shooter.style.left) +2 +"%"
+        shooter.style.left=parseInt(shooter.style.left) +10 +"%"
     }
     
 }
