@@ -7,11 +7,13 @@
 }
 
 .shooter {
+  position: absolute;
   width: 0;
   height: 0;
   border: 50px solid transparent;
   border-top: 0;
   border-bottom: 80px solid greenyellow;
+  transform: translate(-50%);
 }
   
 .grid{
