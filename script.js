@@ -20,7 +20,7 @@ else{
         
     }
 }
-if(shooter.style.right===0+"%"){
+if(shooter.style.left===0+"%"){
     console.log("limite");
 }
 else{
