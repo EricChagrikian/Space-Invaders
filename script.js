@@ -15,7 +15,7 @@ for (let i = 0; i < 800; i++) {
     grid.appendChild(square)
 }
 
-const square= Array.from(document.querySelectorAll('.grid div'))
+const squares = Array.from(document.querySelectorAll('.grid div'))
 
 const alienInvaders = 
 [0,1,2,3,4,5,6,7,8,9,10,
@@ -24,8 +24,8 @@ const alienInvaders =
 
  function draw() {
      for (let i = 0; i < alienInvaders.length; i++) {
-       if(!aliensRemoved.includes[i]) {
-         square[alienInvaders[i]].classList.add('invader')
+       if(!aliensRemoved.includes(i)) {
+         squares[alienInvaders[i]].classList.add('invader')
        }
      }
  }
@@ -33,7 +33,7 @@ const alienInvaders =
 
  function remove() {
     for (let i = 0; i < alienInvaders.length; i++) {
-        square[alienInvaders[i]].classList.remove('invader')
+        squares[alienInvaders[i]].classList.remove('invader')
     }
 }
 
