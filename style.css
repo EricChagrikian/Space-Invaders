@@ -1,6 +1,8 @@
 
 .laser {
-    background: url(./images/Lazer.png)
+    background-color: white;
+height: 100px;
+    width:10px
 }
 
 .boom {
@@ -16,11 +18,31 @@
   border-bottom: 80px solid greenyellow;
   transform: translate(-50%);
 }
-  
+.results{
+    position: absolute;
+  color: wheat;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%);
+  font-size: 40px;
+}
+.button{
+    color: rgb(35, 2, 102);
+    
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    font-size: 25px;
+}
+.button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    text-shadow: 1px 1px 5px rgb(17, 17, 224);
+}
 .grid{
     position: relative;
     width: 800px;
-    height: 800px;
+    height: 700px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
@@ -37,4 +59,15 @@
     background-color: red;
     border-radius: 50%;
 
+}
+.start{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+}
+.start:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 5px wheat;
 }

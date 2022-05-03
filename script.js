@@ -10,7 +10,7 @@ let shooter = document.querySelector('.shooter')
 const resultsDisplay = document.querySelector('.results')
 let results = 0
 let aliensRemoved = []
-
+let button = document.querySelector('.button')
 
 
 for (let i = 0; i < 800; i++) {
@@ -25,7 +25,8 @@ window.addEventListener('load', () =>{
     shooter.style.left = 50+"%";
     shooter.style.bottom = 10+"px";
     });
-    document.addEventListener('keydown', (e)=>{
+    function move (e){
+        
     if(shooter.style.left===0+"%"){
         console.log("limite");
     }
@@ -44,8 +45,11 @@ window.addEventListener('load', () =>{
         }
         
     }
+    
+  
     }
-    )
+    
+    document.addEventListener('keydown',move)
 
 const alienInvaders = 
 [0,1,2,3,4,5,6,7,8,9,10,
@@ -96,12 +100,16 @@ function moveinvaders() {
     }
   
     draw()
-  
+button.style.display='none'
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
       resultsDisplay.innerHTML = 'GAME OVER'
+      button.style.display="inline-block"
+      button.innerHTML="try again"
       clearInterval(invadersId)
     }
-
+button.addEventListener('click',()=>{
+    window.location.reload(true)
+})
     for (let i = 0; i < alienInvaders.length; i++) {
         if(alienInvaders[i] > (squares.length)) {
             resultsDisplay.innerHTML = 'GAME OVER'
@@ -114,9 +122,16 @@ function moveinvaders() {
         clearInterval(invadersId)
     }
 }
+function starter(){
+invadersId =setInterval(moveinvaders, 100)
+}
 
-invadersId =setInterval(moveinvaders, 20)
-
+let start = document.querySelector('.start')
+start.innerHTML='start'
+start.addEventListener('click',()=>{
+start.style.display="none"
+    starter()
+})
 
 
 function shoot(e) {
