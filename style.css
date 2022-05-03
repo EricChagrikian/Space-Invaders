@@ -1,28 +1,50 @@
+body {
+    background: url(./images/space.jpg);
+    background-size: contain;
+}
+
+
+.results {
+    z-index: 5;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+}
+
 .laser {
-    background: url(./images/Lazer.png)
+    background: url(./images/Lazer.png);
+    z-index: 3;
 }
 
 .boom {
-    background: url(./images/boom.png)
+    background: url(./images/boom.png);
+    z-index: 2;
 }
 
 .shooter {
+  position: absolute;
   width: 0;
   height: 0;
   border: 50px solid transparent;
   border-top: 0;
   border-bottom: 80px solid greenyellow;
+  transform: translate(-50%);
 }
   
 .grid{
     position: relative;
     width: 800px;
     height: 800px;
-    border: 1px solid black;
+    border: 10px solid rgb(21, 1, 81);
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background: url(./images/space.jpg);
+    background-size: contain;
     overflow: hidden;
+    left: 25%;
 }
 
 .grid div{
@@ -32,5 +54,8 @@
 
 .invader{
     background-color: red;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    z-index: 7;
 }
