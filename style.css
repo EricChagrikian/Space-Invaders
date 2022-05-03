@@ -4,9 +4,10 @@
 
 .boom {
     background: url(./images/boom.png)
+}
 
-.shooter{
- width: 0;
+.shooter {
+  width: 0;
   height: 0;
   border: 50px solid transparent;
   border-top: 0;
@@ -14,13 +15,14 @@
 }
   
 .grid{
+    position: relative;
     width: 800px;
     height: 800px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     background-color: black;
-
+    overflow: hidden;
 }
 
 .grid div{
