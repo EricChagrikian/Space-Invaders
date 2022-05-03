@@ -92,21 +92,21 @@ shooter.style.bottom = 15+"px";
 });
 
 document.addEventListener('keydown', (e)=>{
-if(shooter.style.left===-8+"%"){
+if(shooter.style.left===0+"%"){
     console.log("limite");
 }
 else{
     if(e.key === "ArrowLeft"){
-        shooter.style.left=parseInt(shooter.style.left) -2 +"%"
+        shooter.style.left=parseInt(shooter.style.left) -10 +"%"
         
     }
 }
-if(shooter.style.left===90+"%"){
+if(shooter.style.left===100+"%"){
     console.log("limite");
 }
 else{
     if(e.key==='ArrowRight'){
-        shooter.style.left=parseInt(shooter.style.left) +2 +"%"
+        shooter.style.left=parseInt(shooter.style.left) +10 +"%"
     }
     
 }

@@ -12,12 +12,14 @@
   border: 50px solid transparent;
   border-top: 0;
   border-bottom: 80px solid greenyellow;
+  transform: translateX(-50%);
 }
+
   
 .grid{
     position: relative;
     width: 800px;
-    height: 800px;
+    height: 700px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
