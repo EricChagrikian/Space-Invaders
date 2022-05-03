@@ -100,16 +100,16 @@ function moveinvaders() {
     }
   
     draw()
-button.style.display='none'
+
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
       resultsDisplay.innerHTML = 'GAME OVER'
       button.style.display="inline-block"
       button.innerHTML="try again"
       clearInterval(invadersId)
     }
-button.addEventListener('click',()=>{
-    window.location.reload(true)
-})
+    button.addEventListener('click',()=>{
+        window.location.reload(true)
+    })
     for (let i = 0; i < alienInvaders.length; i++) {
         if(alienInvaders[i] > (squares.length)) {
             resultsDisplay.innerHTML = 'GAME OVER'

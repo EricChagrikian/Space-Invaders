@@ -28,7 +28,7 @@ height: 100px;
 }
 .button{
     color: rgb(35, 2, 102);
-    
+    display: none;
     position: absolute;
     left: 50%;
     top: 60%;
