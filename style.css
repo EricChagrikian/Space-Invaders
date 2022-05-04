@@ -5,12 +5,11 @@ body {
 }
 
 
-
-
 .laser {
     background: url(./images/Lazer.png);
+    filter: brightness(150%);
+    background-size: contain;
     z-index: 3;
-
 }
 
 .boom {
@@ -19,17 +18,17 @@ body {
 }
 
 .shooter {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-top: 0;
-  border-bottom: 80px solid greenyellow;
-  transform: translate(-50%);
+    border: 50px solid transparent;
+    border-top: 0;
+    border-bottom: 80px solid greenyellow;
+    transform: translate(-50%);
+    /* background: url(./images/shooter.png);
+    z-index: 4  ;
+    background-size: contain; */
 }
 .results{
   z-index:4;
-  position: absolute;
+  position: absolute;   
   color: wheat;
   left: 50%;
   top: 40%;
@@ -49,10 +48,12 @@ body {
     cursor: pointer;
     text-shadow: 1px 1px 5px rgb(17, 17, 224);
 }
+
+
 .grid{
     position: relative;
     width: 800px;
-    height: 800px;
+    height: 700px;
     border: 10px solid rgb(21, 1, 81);
     display: flex;
     flex-wrap: wrap;
@@ -68,7 +69,8 @@ body {
 }
 
 .invader{
-    background-color: red;
+    background: url(./images/invader.png);
+    background-size: contain;
     width: 40px;
     height: 40px;
     border-radius: 50%;
