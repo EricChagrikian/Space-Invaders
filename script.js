@@ -1,13 +1,16 @@
-let aliensRemoved = []
+
+
 const grid = document.querySelector('.grid')
 let width = 20
 let direction = 1
+let currentShooterIndex = 403
 let invadersId 
 let goinRight = true
 let shooter = document.querySelector('.shooter')
 const resultsDisplay = document.querySelector('.results')
 let results = 0
-let currentShooterIndex = 202
+let aliensRemoved = []
+let button = document.querySelector('.button')
 
 
 for (let i = 0; i < 800; i++) {
@@ -15,7 +18,40 @@ for (let i = 0; i < 800; i++) {
     grid.appendChild(square)
 }
 
-const square= Array.from(document.querySelectorAll('.grid div'))
+const squares = Array.from(document.querySelectorAll('.grid div'))
+
+window.addEventListener('load', () =>{
+    shooter.style.position = 'absolute';
+    shooter.style.left = 50+"%";
+    shooter.style.bottom = 10+"px";
+    });
+    function move (e){
+        
+    if(shooter.style.left===0+"%"){
+        console.log("limite");
+    }
+    else{
+        if(e.key === "ArrowLeft"){
+            shooter.style.left=parseInt(shooter.style.left) -10 +"%"
+            
+        }   
+    }
+    if(shooter.style.left===100+"%"){
+        console.log("limite");
+    }
+    else{
+        if(e.key==='ArrowRight'){
+            shooter.style.left=parseInt(shooter.style.left) +10 +"%"
+        }
+        
+    }
+    
+  
+    }
+    
+    
+    
+    document.addEventListener('keydown',move)
 
 const alienInvaders = 
 [0,1,2,3,4,5,6,7,8,9,10,
@@ -24,8 +60,8 @@ const alienInvaders =
 
  function draw() {
      for (let i = 0; i < alienInvaders.length; i++) {
-       if(!aliensRemoved.includes[i]) {
-         square[alienInvaders[i]].classList.add('invader')
+       if(!aliensRemoved.includes(i)) {
+         squares[alienInvaders[i]].classList.add('invader')
        }
      }
  }
@@ -33,19 +69,21 @@ const alienInvaders =
 
  function remove() {
     for (let i = 0; i < alienInvaders.length; i++) {
-        square[alienInvaders[i]].classList.remove('invader')
+        squares[alienInvaders[i]].classList.remove('invader')
     }
 }
 
 
+
+
 function moveinvaders() {
-    const leftEdge = alienInvaders[0] % width === 0
-    const rightEdge = alienInvaders[alienInvaders.length -1] % width === width -1
+    const leftEdge = alienInvaders[0] % width === 1
+    const rightEdge = alienInvaders[alienInvaders.length -1] % width === 0
     remove()
 
     if  (rightEdge && goinRight) {
         for (let i = 0; i < alienInvaders.length; i++) {
-            alienInvaders[i] += width +1
+            alienInvaders[i] += width
             direction = -1
             goinRight = false
         }
@@ -53,7 +91,7 @@ function moveinvaders() {
 
     if (leftEdge && !goinRight) {
         for (let i = 0; i < alienInvaders.length; i++){
-            alienInvaders[i] += width +5
+            alienInvaders[i] += width +1
             direction = 1
             goinRight = true
         }
@@ -64,14 +102,18 @@ function moveinvaders() {
     }
   
     draw()
-  
-    if (shooter[currentShooterIndex].classList.contains('invader', 'shooter')) {
-      resultsDisplay.innerHTML = 'GAME OVER'    
+
+    if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
+      resultsDisplay.innerHTML = 'GAME OVER'
+      button.style.display="inline-block"
+      button.innerHTML="try again"
       clearInterval(invadersId)
     }
-
+    button.addEventListener('click',()=>{
+        window.location.reload(true)
+    })
     for (let i = 0; i < alienInvaders.length; i++) {
-        if(alienInvaders[i] > (shooter.length)) {
+        if(alienInvaders[i] > (squares.length)) {
             resultsDisplay.innerHTML = 'GAME OVER'
             clearInterval(invadersId)
         }
@@ -82,56 +124,41 @@ function moveinvaders() {
         clearInterval(invadersId)
     }
 }
-
-invadersId =setInterval(moveinvaders, 100)
-
-window.addEventListener('load', () =>{
-shooter.style.position = 'absolute';
-shooter.style.left = 50+"%";
-shooter.style.bottom = 15+"px";
-});
-
-document.addEventListener('keydown', (e)=>{
-if(shooter.style.left===0+"%"){
-    console.log("limite");
-}
-else{
-    if(e.key === "ArrowLeft"){
-        shooter.style.left=parseInt(shooter.style.left) -10 +"%"
-        
-    }
-}
-if(shooter.style.left===100+"%"){
-    console.log("limite");
-}
-else{
-    if(e.key==='ArrowRight'){
-        shooter.style.left=parseInt(shooter.style.left) +10 +"%"
-    }
+function starter(){
+    invadersId =setInterval(moveinvaders, 100)}
     
-}
-}
-)
+    let start = document.querySelector('.start')
+    start.innerHTML='start'
+    start.addEventListener('click',()=>{
+    start.style.display="none"
+        starter()
+    })
+
+
+
+
+
 
 function shoot(e) {
     let laserId
     let currentLaserIndex = currentShooterIndex
     function moveLaser() {
-        shooter[currentLaserIndex].classList.remove('laser')
+        squares[currentLaserIndex].classList.remove('laser')
         currentLaserIndex -= width
-        shooter[currentLaserIndex].classList.add('laser')
+        squares[currentLaserIndex].classList.add('laser')
 
-        if (shooter[currentLaserIndex].classList.contains('invader')) {
-            shooter[currentLaserIndex].classList.remove('laser')
-            shooter[currentLaserIndex].classList.remove('invader')
-            shooter[currentLaserIndex].classList.add('boom')
+        if (squares[currentLaserIndex].classList.contains('invader')) {
+            squares[currentLaserIndex].classList.remove('laser')
+            squares[currentLaserIndex].classList.remove('invader')
+            squares[currentLaserIndex].classList.add('boom')
 
-            setTimeout(()=> shooter[currentLaserIndex].classList.remove('boom'), 300)
+            setTimeout(()=> squares[currentLaserIndex].classList.remove('boom'), 300)
             clearInterval(laserId)
             const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
+            aliensRemoved.push(alienRemoved)
             results++
             resultsDisplay.innerHTML = results
-            aliensRemoved.push(alienRemoved)
+            console.log(aliensRemoved)
         }
     }
     switch(e.key) {
@@ -141,3 +168,4 @@ function shoot(e) {
 }
 
 document.addEventListener('keydown', shoot)
+

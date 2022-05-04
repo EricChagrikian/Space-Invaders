@@ -1,30 +1,67 @@
+
+body {
+    background: url(./images/space.jpg);
+    background-size: contain;
+}
+
+
+
+
 .laser {
-    background: url(./images/Lazer.png)
+    background: url(./images/Lazer.png);
+    z-index: 3;
+
 }
 
 .boom {
-    background: url(./images/boom.png)
+    background: url(./images/boom.png);
+    z-index: 2;
 }
 
 .shooter {
+  position: absolute;
   width: 0;
   height: 0;
   border: 50px solid transparent;
   border-top: 0;
   border-bottom: 80px solid greenyellow;
-  transform: translateX(-50%);
+  transform: translate(-50%);
 }
-
-  
+.results{
+  z-index:4;
+    position: absolute;
+  color: wheat;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%);
+  font-size: 40px;
+}
+.button{
+    color: rgb(35, 2, 102);
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    font-size: 25px;
+}
+.button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    text-shadow: 1px 1px 5px rgb(17, 17, 224);
+}
 .grid{
     position: relative;
     width: 800px;
-    height: 700px;
-    border: 1px solid black;
+
+    height: 800px;
+    border: 10px solid rgb(21, 1, 81);
+
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background: url(./images/space.jpg);
+    background-size: contain;
     overflow: hidden;
+    left: 25%;
 }
 
 .grid div{
@@ -34,5 +71,23 @@
 
 .invader{
     background-color: red;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+
+
+}
+.start{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+}
+.start:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 5px wheat;
+
+    z-index: 7;
+
 }
