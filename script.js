@@ -70,8 +70,8 @@ const alienInvaders =
 
 
 function moveinvaders() {
-    const leftEdge = alienInvaders[0] % width === 2
-    const rightEdge = alienInvaders[alienInvaders.length -1] % width === width -1
+    const leftEdge = alienInvaders[0] % width === 1
+    const rightEdge = alienInvaders[alienInvaders.length -1] % width === 0
     remove()
 
     if  (rightEdge && goinRight) {
