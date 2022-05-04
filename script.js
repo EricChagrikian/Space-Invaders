@@ -4,7 +4,11 @@ const grid = document.querySelector('.grid')
 grid.style.height="800px"
 let width = 20
 let direction = 1
+let currentShooterIndex = 372
+let invadersId 
+let goinRight = true
 let shooter = document.querySelector('.shooter')
+const resultsDisplay = document.querySelector('.results')
 let results = 0
 let aliensRemoved = []
 let button = document.querySelector('.button')
@@ -32,13 +36,18 @@ const squares = Array.from(document.querySelectorAll('.grid div'))
     }
     else{
         if(e.key === "ArrowLeft"){
+            shooter.style.left=parseInt(shooter.style.left) -5 +"%"
             currentShooterIndex -=1
         }   
     }
+    if(shooter.style.left===100+"%"){
+        console.log("limite");
+    }
+    else{
         if(e.key==='ArrowRight'){
             shooter.style.left=parseInt(shooter.style.left) +5 +"%"
             currentShooterIndex +=1
-        }
+        }}
     }
     
 
