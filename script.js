@@ -54,7 +54,7 @@ window.addEventListener('load', () =>{
     document.addEventListener('keydown',move)
 
 const alienInvaders = 
-[0,1,2,3,4,5,6,7,8,9,10,
+    [0,1,2,3,4,5,6,7,8,9,10,
     20,21,22,23,24,25,26,27,28,29,30,
     40,41,42,43,44,45,46,47,48,49,50]
 
@@ -77,8 +77,8 @@ const alienInvaders =
 
 
 function moveinvaders() {
-    const leftEdge = alienInvaders[0] % width === 1
-    const rightEdge = alienInvaders[alienInvaders.length -1] % width === 0
+    const leftEdge = alienInvaders[0] % width === 3
+    const rightEdge = alienInvaders[alienInvaders.length -1] % width === 2
     remove()
 
     if  (rightEdge && goinRight) {
@@ -125,17 +125,17 @@ function moveinvaders() {
     }
 }
 function starter(){
-    invadersId =setInterval(moveinvaders, 100)}
-    
-    let start = document.querySelector('.start')
-    start.innerHTML='start'
-    start.addEventListener('click',()=>{
-    start.style.display="none"
-        starter()
-    })
+    invadersId =setInterval(moveinvaders, 100)
+}
 
 
+let start = document.querySelector('.start')
+start.innerHTML='start'
+start.addEventListener('click',()=>{
+start.classList.remove('start')
+    starter()
 
+})
 
 
 
