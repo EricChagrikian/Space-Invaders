@@ -35,6 +35,7 @@ window.addEventListener('load', () =>{
     else{
         if(e.key === "ArrowLeft"){
             shooter.style.left=parseInt(shooter.style.left) -10 +"%"
+            currentShooterIndex-=1
             
         }   
     }
@@ -44,6 +45,7 @@ window.addEventListener('load', () =>{
     else{
         if(e.key==='ArrowRight'){
             shooter.style.left=parseInt(shooter.style.left) +10 +"%"
+            currentShooterIndex+=1
         }
         
     }
