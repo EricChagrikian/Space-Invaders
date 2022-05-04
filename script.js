@@ -32,7 +32,7 @@ window.addEventListener('load', () =>{
     }
     else{
         if(e.key === "ArrowLeft"){
-            shooter.style.left=parseInt(shooter.style.left) -5 +"%"
+            shooter.style.left=parseInt(shooter.style.left) -10 +"%"
             
         }   
     }
@@ -41,13 +41,14 @@ window.addEventListener('load', () =>{
     }
     else{
         if(e.key==='ArrowRight'){
-            shooter.style.left=parseInt(shooter.style.left) +5 +"%"
+            shooter.style.left=parseInt(shooter.style.left) +10 +"%"
         }
         
     }
     
   
     }
+    
     
     document.addEventListener('keydown',move)
 
