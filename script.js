@@ -1,7 +1,4 @@
-
-
 const grid = document.querySelector('.grid')
-grid.style.height="800px"
 let width = 20
 let direction = 1
 let currentShooterIndex = 372
@@ -25,9 +22,8 @@ const squares = Array.from(document.querySelectorAll('.grid div'))
 
     window.addEventListener('load', () =>{
     shooter.style.position = 'absolute';
-   let= shooter.style.left = 50+"%";
-    shooter.style.bottom = 10+"px";
-    
+    shooter.style.left = 50+"%";
+    shooter.style.bottom =0+"px";
     });
     function move (e){
         
@@ -47,9 +43,9 @@ const squares = Array.from(document.querySelectorAll('.grid div'))
         if(e.key==='ArrowRight'){
             shooter.style.left=parseInt(shooter.style.left) +5 +"%"
             currentShooterIndex +=1
-        }}
+        }
     }
-    
+    }
 
     
     document.addEventListener('keydown', move)
@@ -147,9 +143,6 @@ function shoot(e) {
         squares[currentLaserIndex].classList.remove('laser')
         currentLaserIndex -= width
         squares[currentLaserIndex].classList.add('laser')
-        
-
-       
 
         if (squares[currentLaserIndex].classList.contains('invader')) {
             squares[currentLaserIndex].classList.remove('laser')
