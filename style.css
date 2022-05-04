@@ -1,12 +1,21 @@
 
+body {
+    background: url(./images/space.jpg);
+    background-size: contain;
+}
+
+
+
+
 .laser {
-    background-color: white;
-height: 100px;
-    width:10px
+    background: url(./images/Lazer.png);
+    z-index: 3;
+
 }
 
 .boom {
-    background: url(./images/boom.png)
+    background: url(./images/boom.png);
+    z-index: 2;
 }
 
 .shooter {
@@ -19,6 +28,7 @@ height: 100px;
   transform: translate(-50%);
 }
 .results{
+  z-index:4;
     position: absolute;
   color: wheat;
   left: 50%;
@@ -42,12 +52,16 @@ height: 100px;
 .grid{
     position: relative;
     width: 800px;
-    height: 700px;
-    border: 1px solid black;
+
+    height: 800px;
+    border: 10px solid rgb(21, 1, 81);
+
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background: url(./images/space.jpg);
+    background-size: contain;
     overflow: hidden;
+    left: 25%;
 }
 
 .grid div{
@@ -57,7 +71,10 @@ height: 100px;
 
 .invader{
     background-color: red;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+
 
 }
 .start{
@@ -70,4 +87,7 @@ height: 100px;
 .start:hover{
     cursor: pointer;
     text-shadow: 1px 1px 5px wheat;
+
+    z-index: 7;
+
 }

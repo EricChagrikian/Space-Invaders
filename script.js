@@ -76,13 +76,13 @@ const alienInvaders =
 
 
 function moveinvaders() {
-    const leftEdge = alienInvaders[0] % width === 0
-    const rightEdge = alienInvaders[alienInvaders.length -1] % width === width -1
+    const leftEdge = alienInvaders[0] % width === 1
+    const rightEdge = alienInvaders[alienInvaders.length -1] % width === 0
     remove()
 
     if  (rightEdge && goinRight) {
         for (let i = 0; i < alienInvaders.length; i++) {
-            alienInvaders[i] += width +1
+            alienInvaders[i] += width
             direction = -1
             goinRight = false
         }
@@ -90,7 +90,7 @@ function moveinvaders() {
 
     if (leftEdge && !goinRight) {
         for (let i = 0; i < alienInvaders.length; i++){
-            alienInvaders[i] += width -1
+            alienInvaders[i] += width +1
             direction = 1
             goinRight = true
         }
@@ -127,12 +127,14 @@ function starter(){
 invadersId =setInterval(moveinvaders, 100)
 }
 
+
 let start = document.querySelector('.start')
 start.innerHTML='start'
 start.addEventListener('click',()=>{
 start.style.display="none"
     starter()
 })
+
 
 
 function shoot(e) {
