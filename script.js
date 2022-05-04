@@ -1,9 +1,10 @@
 
 
 const grid = document.querySelector('.grid')
+grid.style.height="800px"
 let width = 20
 let direction = 1
-let currentShooterIndex = 403
+let currentShooterIndex = 390
 let invadersId 
 let goinRight = true
 let shooter = document.querySelector('.shooter')
@@ -22,8 +23,9 @@ const squares = Array.from(document.querySelectorAll('.grid div'))
 
 window.addEventListener('load', () =>{
     shooter.style.position = 'absolute';
-    shooter.style.left = 50+"%";
+   let= shooter.style.left = 50+"%";
     shooter.style.bottom = 10+"px";
+    
     });
     function move (e){
         
@@ -45,8 +47,7 @@ window.addEventListener('load', () =>{
         }
         
     }
-    
-  
+
     }
     
     
@@ -146,6 +147,9 @@ function shoot(e) {
         squares[currentLaserIndex].classList.remove('laser')
         currentLaserIndex -= width
         squares[currentLaserIndex].classList.add('laser')
+        
+
+       
 
         if (squares[currentLaserIndex].classList.contains('invader')) {
             squares[currentLaserIndex].classList.remove('laser')
@@ -162,7 +166,7 @@ function shoot(e) {
         }
     }
     switch(e.key) {
-        case 'Space':
+        case 'ArrowUp':
             laserId = setInterval (moveLaser, 100)
     }
 }
