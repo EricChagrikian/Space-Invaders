@@ -1,22 +1,16 @@
+
 body {
     background: url(./images/space.jpg);
     background-size: contain;
 }
 
 
-.results {
-    z-index: 5;
-    position: absolute;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-}
+
 
 .laser {
     background: url(./images/Lazer.png);
     z-index: 3;
+
 }
 
 .boom {
@@ -33,12 +27,35 @@ body {
   border-bottom: 80px solid greenyellow;
   transform: translate(-50%);
 }
-  
+.results{
+  z-index:4;
+    position: absolute;
+  color: wheat;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%);
+  font-size: 40px;
+}
+.button{
+    color: rgb(35, 2, 102);
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    font-size: 25px;
+}
+.button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    text-shadow: 1px 1px 5px rgb(17, 17, 224);
+}
 .grid{
     position: relative;
     width: 800px;
+
     height: 800px;
     border: 10px solid rgb(21, 1, 81);
+
     display: flex;
     flex-wrap: wrap;
     background: url(./images/space.jpg);
@@ -57,5 +74,20 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+
+
+}
+.start{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+}
+.start:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 5px wheat;
+
     z-index: 7;
+
 }
