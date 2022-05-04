@@ -118,6 +118,8 @@ function moveinvaders() {
 
     if (aliensRemoved.length === alienInvaders.length) {
         resultsDisplay.innerHTML = "YOU WIN"
+        button.style.display="inline-block"
+        button.innerHTML='new game'
         clearInterval(invadersId)
     }
 }

@@ -21,7 +21,7 @@ body {
 .shooter {
     position: absolute;
     background: url(./images/shooter.png);
-    background-size: contain;
+    background-size: cover;
     filter: invert(1);
     z-index: 1;
     transform: translate(-50%);
