@@ -3,7 +3,7 @@
 const grid = document.querySelector('.grid')
 let width = 20
 let direction = 1
-let currentShooterIndex = 403
+let currentShooterIndex = 372
 let invadersId 
 let goinRight = true
 let shooter = document.querySelector('.shooter')
@@ -13,6 +13,7 @@ let aliensRemoved = []
 let button = document.querySelector('.button')
 
 
+
 for (let i = 0; i < 800; i++) {
     const square = document.createElement('div')
     grid.appendChild(square)
@@ -20,20 +21,21 @@ for (let i = 0; i < 800; i++) {
 
 const squares = Array.from(document.querySelectorAll('.grid div'))
 
-window.addEventListener('load', () =>{
+
+    window.addEventListener('load', () =>{
     shooter.style.position = 'absolute';
     shooter.style.left = 50+"%";
     shooter.style.bottom = 10+"px";
     });
     function move (e){
         
-    if(shooter.style.left===0+"%"){
+    if(shooter.style.left===5+"%"){
         console.log("limite");
     }
     else{
         if(e.key === "ArrowLeft"){
-            shooter.style.left=parseInt(shooter.style.left) -10 +"%"
-            
+            shooter.style.left=parseInt(shooter.style.left) -5 +"%"
+            currentShooterIndex -=1
         }   
     }
     if(shooter.style.left===100+"%"){
@@ -41,16 +43,14 @@ window.addEventListener('load', () =>{
     }
     else{
         if(e.key==='ArrowRight'){
-            shooter.style.left=parseInt(shooter.style.left) +10 +"%"
+            shooter.style.left=parseInt(shooter.style.left) +5 +"%"
+            currentShooterIndex +=1
         }
-        
     }
-    
-  
     }
+
     
-    
-    document.addEventListener('keydown',move)
+    document.addEventListener('keydown', move)
 
 const alienInvaders = 
     [0,1,2,3,4,5,6,7,8,9,10,
@@ -71,8 +71,6 @@ const alienInvaders =
         squares[alienInvaders[i]].classList.remove('invader')
     }
 }
-
-
 
 
 function moveinvaders() {
@@ -101,6 +99,8 @@ function moveinvaders() {
     }
   
     draw()
+
+    
 
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
       resultsDisplay.innerHTML = 'GAME OVER'
@@ -161,8 +161,9 @@ function shoot(e) {
         }
     }
     switch(e.key) {
-        case 'Space':
-            laserId = setInterval (moveLaser, 100)
+        case 'ArrowUp':
+            laserId = setInterval (moveLaser, 100); 
+
     }
 }
 
