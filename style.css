@@ -29,7 +29,7 @@ body {
 }
 .results{
   z-index:4;
-    position: absolute;
+  position: absolute;
   color: wheat;
   left: 50%;
   top: 40%;
@@ -52,10 +52,8 @@ body {
 .grid{
     position: relative;
     width: 800px;
-
     height: 800px;
     border: 10px solid rgb(21, 1, 81);
-
     display: flex;
     flex-wrap: wrap;
     background: url(./images/space.jpg);
@@ -83,11 +81,10 @@ body {
     top: 50%;
     left: 50%;
     font-size: 50px;
+    display: hidden;
 }
 .start:hover{
     cursor: pointer;
     text-shadow: 1px 1px 5px wheat;
-
     z-index: 7;
-
 }
